@@ -1,13 +1,138 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 80vh;
+}
+
+.header {
+    background-color: grey;
+    font-size: 50px;
+    text-align: center;
+}
+
+.pokedex {
+    background-color: rgb(255, 0, 0);
+    width: 320px;
+    height: 470px;
+    border-radius: 8px;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    position: relative;
+}
+
+.pokedex-depth {
+    width: 330px;
+    height: 480px;
+    background-color: rgb(204, 0, 0);
+    position: absolute;
+    top: -2px;
+    z-index: -1;
+    border-color: black;
+    border-style: solid;
+    border-top-right-radius: 28px;
+    border-top-left-radius: 28px;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 8px;
+    border-width: 2px;
+    box-shadow: 10px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pokedex-forehead {
+    width: 135px;
+    border-top: 90px solid red;
+    border-right: 60px solid transparent;
+    position: relative;
+    border-bottom-width: 2px;
+    border-top-left-radius: 8px;
+}
+
+.forehead-rectangle {
+    background-color: red;
+    width: 200px;
+    height: 50px;
+    position: absolute;
+    right: 0;
+    border-top-right-radius: 8px;
+}
+
+.small-light {
+    width: 15px;
+    height: 15px;
+    border-radius: 100rem;
+    margin: 2px;
+    border-color: black;
+    border-style: solid;
+}
+
+.large-light {
+    border-style: solid;
+    border-color: white;
+    border-width: 5px;
+    margin-right: 5px;
+    background-color: rgb(57, 164, 200);
+    width: 50px;
+    height: 50px;
+    border-radius: 100rem;
+}
+
+.screen {
+    background-color: white;
+    width: 220px;
+    height: 200px;
+    border-radius: 5px;
+    align-self: center;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body {
+    padding-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.light-container {
+    display: flex;
+    position: absolute;
+    top: -75px;
+    left: 10px;
+}
+
+.controls {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.btn-container {
+    display: flex;
+}
+
+.pokemon-img {
+    background-color: black;
+    height: 160px;
+    border-radius: 8px;
+}
+
+.pokemon-stats {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
