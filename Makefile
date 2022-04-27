@@ -2,7 +2,7 @@ REGISTRY=registry.uw.systems
 NAMESPACE=onboarding
 
 install:
-	npm i
+	npm install
 
 run:
 	npm start
