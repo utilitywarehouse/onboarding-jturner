@@ -41,3 +41,5 @@ workflows:
             - dockerize_and_kubernetize:
                   requires:
                       - build_and_test
+                   context:
+                      - onboarding
