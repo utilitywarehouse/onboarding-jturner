@@ -3,7 +3,7 @@ version: 2.1
 jobs:
     build_and_test:
         docker:
-            - image: cimg/node:latest
+            - image: cimg/node:18.0.0
         steps:
             - checkout
             - run:
@@ -18,7 +18,7 @@ jobs:
 
     dockerize_and_kubernetize:
         docker:
-            - image: cimg/node:latest
+            - image: cimg/node:18.0.0
         steps:
             - checkout
             - setup_remote_docker:
@@ -33,7 +33,7 @@ jobs:
             - run:
                   name: Docker push
                   command: make docker_push
-                  
+
 workflows:
     build:
         jobs:
