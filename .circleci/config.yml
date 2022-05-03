@@ -3,14 +3,41 @@ version: 2.1
 jobs:
     build_and_test:
         docker:
-            - image: circleci/node:latest
+            - image: cimg/node:latest
         steps:
             - checkout
-            - run: make install
-            - run: make build
-            - run: make test
+            - run:
+                  name: Installing dependencies
+                  command: make install
+            - run:
+                  name: Build prod version
+                  command: make build
+            - run:
+                  name: Run tests
+                  command: make test
 
+    dockerize_and_kubernetize:
+        docker:
+            - image: cimg/node:latest
+        steps:
+            - checkout
+            - setup_remote_docker:
+                  version: 19.03.13
+                  docker_layer_caching: true
+            - run:
+                  name: Docker login
+                  command: make docker_login
+            - run:
+                  name: Docker build
+                  command: make docker_build
+            - run:
+                  name: Docker push
+                  command: make docker_push
+                  
 workflows:
     build:
         jobs:
             - build_and_test
+            - dockerize_and_kubernetize:
+                  requires:
+                      - build_and_test
